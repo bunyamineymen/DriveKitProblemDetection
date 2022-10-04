@@ -64,7 +64,7 @@ dependencies {
 
 
    // implementation 'com.huawei.hms:hianalytics:6.4.1.302'
-    implementation 'com.huawei.agconnect:agconnect-crash:1.6.5.300'
+    implementation 'com.huawei.agconnect:agconnect-crash:1.7.2.300'
     implementation 'com.huawei.hms:drive:5.0.0.307'
 
 /*
