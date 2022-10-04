@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+android {
+
+    signingConfigs {
+        release {
+            storeFile file('C:\\key\\user.keystore')
+            keyAlias 'huawei'
+            keyPassword 'huawei2327'
+            storePassword 'huawei2327'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+        debug {
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+    }
+
+    compileSdkVersion 31
+    buildToolsVersion "31.0.0"
+    defaultConfig {
+        applicationId 'com.refapp.stack.huawei'
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+dependencies {
+    ext.JUNIT_VERSION = '4.12'
+    ext.ESPRESSO_VERSION = '2.2.2'
+
+    implementation fileTree(include: ['*.jar',], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'com.huawei.hms:hwid:5.2.0.300'
+
+    implementation 'com.huawei.hms:ads-lite:13.4.54.300'
+    implementation 'com.huawei.hms:ads-consent:3.4.54.300'
+    implementation 'com.huawei.hms:ads-identifier:3.4.39.302'
+    implementation 'com.huawei.hms:ads-installreferrer:3.4.39.302'
+
+
+
+    implementation 'com.huawei.hms:hianalytics:6.4.1.302'
+    implementation 'com.huawei.agconnect:agconnect-crash:1.6.5.300'
+    implementation 'com.huawei.hms:game:6.2.0.301'
+    implementation 'com.huawei.hms:iap:6.4.0.301'
+    implementation 'com.huawei.hms:push:6.3.0.304'
+
+
+
+    implementation 'com.huawei.agconnect:agconnect-remoteconfig:1.6.3.300'
+    implementation 'com.huawei.agconnect:agconnect-cloud-database:1.5.0.300'
+    implementation 'com.huawei.agconnect:agconnect-auth:1.6.3.300'
+    implementation 'com.huawei.hms:nearby:6.2.0.301'
+    implementation 'com.huawei.agconnect:agconnect-appmessaging:1.6.3.300'
+
+
+
+    implementation 'com.huawei.hms:location:6.4.0.300'
+    implementation 'com.huawei.hms:scan:2.6.0.301'
+    implementation 'com.huawei.agconnect:agconnect-applinking:1.6.5.300'
+    implementation 'com.huawei.hms:drive:5.0.0.307'
+    implementation 'com.huawei.agconnect:agconnect-storage:1.5.0.100'
+
+}
+
+repositories { flatDir { dirs '../aars' } }
