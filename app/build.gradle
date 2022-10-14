@@ -11,6 +11,10 @@ android {
         }
     }
 
+    packagingOptions{
+        pickFirst "okhttp3/internal/publicsuffix/publicsuffixes.gz"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
