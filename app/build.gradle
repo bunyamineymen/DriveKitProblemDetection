@@ -59,6 +59,8 @@ dependencies {
     implementation 'com.huawei.agconnect:agconnect-crash:1.7.2.300'
     implementation 'com.huawei.hms:drive:5.0.0.307'
 
+    //make drive 301
+
 }
 
 repositories { flatDir { dirs '../aars' } }
